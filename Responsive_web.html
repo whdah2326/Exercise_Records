@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive_Web</title>
+    <style>
+    /* width/height/margin/padding = 가로/세로/바깥쪽여백/안쪽여백 */
+
+      /* box-sizing: 요소의 너비, 높이 등을 지정할 때 사용한다.
+        content-box: 컨텐츠 박스를 기준으로 설정, 테두리, 여백 등을 고려하지 않기 때문에 해당 크기만큼 최종 크기가 증가한다(eg. width 10px;, padding 5px;라면, 최종 크기 15px;).
+        border-box: 최종 크기를 설정한 크기로 한다(eg. width 10;, padding 5px;라면, 최종 크기 10px;에 padding 5px이 포함된 형태). */
+      * {
+        box-sizing: border-box;
+      }
+
+      /* scroll-behavior: 속성(auto/smooth...)에 따라서 메뉴 클릭 시 이동하는 애니메이션 효과 설정 */
+      html {
+        scroll-behavior: smooth;
+
+      }
+
+      /* Setting body tag margin */
+      body {
+        margin: 0;
+      }
+
+      /* Setting header tag */
+      .header {
+        padding: 100px;
+        text-align: center;
+        background-color: skyblue;
+        color: black;
+      }
+
+      /* Setting nav tag */
+      .nav {
+        display: flex;
+        /* Default: flex-direction: row; */
+        background-color: #333;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+      }
+
+      /* Setting nav(a tag) tag */
+      .nav a {
+        color: whitesmoke;
+        padding: 15px 20px;
+        text-align: center;
+      }
+
+      /* Setting nav tag text, hover control */
+      .nav a:hover {
+        background-color: skyblue;
+        color: black;
+      }
+
+      /* Setting div tag, include aside & main */
+      .flex_box {
+        display: flex;
+        /* flex-direction: row; */
+        /* wrap 설정한 width 값을 유지하게 한다. */
+        flex-wrap: wrap;
+      }
+
+      /* Setting aside tag */
+      .aside {
+        /* flex_box 분배 비율 3:7 */
+        flex: 30%;
+        background-color: #f1f1f1;
+        padding: 20px;
+      }
+
+      /* 이미지 영역 임시 설정 */
+      .fake_img {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+      }
+
+      /* Setting main tag */
+      .main {
+        /* flex_box 분배 비율 3:7 */
+        flex: 70%;
+        background-color: white;
+        padding: 20px;
+      }
+
+      /* Setting footer tag */
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background-color: #ddd;
+      }
+
+      /* media query: 스크린 크기에 따라 별도의 CSS를 적용해 최적화
+        @media 미디어-타입 and (미디어-지정-규칙) {CSS-정의} */
+      @media screen and (max-width: 900px) {
+        .flex_box,
+        .nav {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 최상단 -->
+    <header class="header">
+      <h1>Who am I</h1>
+    </header>
+    <!-- 네비게이션 바 -->
+    <nav class="nav">
+      <a href="#project_1">Project 1</a>
+      <a href="#project_2">Project 2</a>
+      <a href="#project_3">Project 3</a>
+      <a href="#project_4">Project 4</a>
+      <a href="#project_5">Project 5</a>
+    </nav>
+    <!-- 반응형웹, 사이드/메인 -->
+    <div class="flex_box">
+      <aside class="aside">
+        <div>
+          <h2>About</h2>
+          <div class="fake_img" style="height: 200px">image</div>
+          <p>저는 개발자 준비생입니다.</p>
+          <h3>Skills</h3>
+          <p>python(learning)</p>
+          <div class="fake_img" style="height: 100px">image</div>
+          <br />
+          <div class="fake_img" style="height: 100px">image</div>
+          <br />
+          <div class="fake_img" style="height: 100px">image</div>
+          <br />
+          <div class="fake_img" style="height: 100px">image</div>
+          <br />
+          <div class="fake_img" style="height: 100px">image</div>
+          <br />
+        </div>
+      </aside>
+      <main class="main">
+        <section id="project_1">
+          <h2>Project 1</h2>
+          <h5>2023. 5.</h5>
+          <div class="fake_img" style="height: 200px">image</div>
+          <p>
+            This project is ... <br />
+            And my position in this project is ...
+          </p>
+        </section>
+        <section id="project_2">
+          <h2>Project 2</h2>
+          <h5>2023. 5.</h5>
+          <div class="fake_img" style="height: 200px">image</div>
+          <p>
+            This project is ... <br />
+            And my position in this project is ...
+          </p>
+        </section>
+        <section id="project_3">
+          <h2>Project 3</h2>
+          <h5>2023. 5.</h5>
+          <div class="fake_img" style="height: 200px">image</div>
+          <p>
+            This project is ... <br />
+            And my position in this project is ...
+          </p>
+        </section>
+        <section id="project_4">
+            <h2>Project 4</h2>
+            <h5>2023. 6.</h5>
+            <div class="fake_img" style="height: 200px">image</div>
+            <p>
+              This project is ... <br />
+              And my position in this project is ...
+            </p>
+          </section>
+          <section id="project_5">
+            <h2>Project 5</h2>
+            <h5>2023. 6.</h5>
+            <div class="fake_img" style="height: 200px">image</div>
+            <p>
+              This project is ... <br />
+              And my position in this project is ...
+            </p>
+          </section>
+      </main>
+    </div>
+    <!-- 작성자, 저작권, 관련 정포 등... -->
+    <footer class="footer">Copyright J. YOON 2023.</footer>
+  </body>
+</html>
